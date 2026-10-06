@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define MAX 10
+
+struct Ponto { int x; int y; };
+
+{
+    int a = 5;
+    int a = 6;                 // erro: redeclaração no mesmo escopo
+    float f = 2.5;
+    const int c = 1;
+    int v[MAX];
+    int *p;
+    struct Ponto pt;
+
+    a = f * 2;                 // erro: real em inteiro
+    f = a + 1;                 // OK: inteiro em real
+    b = 3;                     // erro: 'b' não declarada
+    c = 2;                     // erro: const
+    MAX = 20;                  // erro: define não pode ser alterado
+    v = 3;                     // erro: array atribuído diretamente
+    v[f] = 1;                  // erro: índice real
+    a = f % 2;                 // erro: % com real
+    p = a;                     // erro: int em ponteiro
+    p = &a;                    // OK
+    pt.z = 1;                  // erro: membro inexistente
+    pt.x = a;                  // OK
+    a = desconhecida(1);       // erro: função não declarada
+    {
+        int interna = 1;
+    }
+    a = interna;               // erro: fora do escopo
+    a += 2;                    // OK
+}

@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int x;
+x = 10;
+
+float y = 2.5;
+
+x = y;
+z = 5;
